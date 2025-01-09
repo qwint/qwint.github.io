@@ -1,3 +1,3 @@
-[submodule "air_delivery/ap-air-delivery"]
-	path = air_delivery/ap-air-delivery
+[submodule "ap-air-delivery-source"]
+	path = ap-air-delivery-source
 	url = https://github.com/qwint/ap-air-delivery
