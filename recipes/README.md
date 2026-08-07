@@ -19,12 +19,12 @@
 
 
 ### Fried Dough
-* 1/2c flour
+* 100g flour
 * 2tsp sugar
 * 1/2tsp baking powder
 * dash of salt
 * mix in bowl
-* ~1/4 cup milk, combine with drys into dough
+* ~70g cup milk, combine with drys into dough
 * knead dough lightly, split into small portions
 * fry dough (shallow fry + flipping is fine)
   * heat oil at medium heat to temp then down to low/med-low
