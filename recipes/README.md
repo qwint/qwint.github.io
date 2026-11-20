@@ -7,7 +7,7 @@
 
 ### Bread Base
 * 350g flour
-* 250g hot water + teaspoon sugar + teaspoon salt + half pack of yeast
+* 250g hot water + teaspoon sugar + teaspoon salt + teaspoon yeast
 * let yeast mixture rest and activate ~ 15 min
 * lightly mix with flour to incorperate
 * rest ~30m
