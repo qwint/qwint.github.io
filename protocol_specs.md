@@ -27,24 +27,24 @@ ex.
 
 ### DeathLink
 
-#### type: Bounce
-#### tag: `DeathLink`
+* type: Bounce
+* tag: `DeathLink`
 
-#### data:
-* `time`: int Unix timestamp of packet sent
-  * SHALL be included
-  * SHALL be used in the client to ignore a client's own packets reflected back
-  * MAY ignore any packets older than the previous send or only packets that equal timestamp exactly
-* `cause`: string flavor text about the deaths to display to player
-  * SHALL be a string
-  * MAY be omitted
-  * SHALL include the player's slot name or in-game name as part of the message so it can be displayed as-is
-  * MAY be used if present to display to the player
-* `source`: string name of the player who died
-  * SHALL be included
-  * SHALL be a string
-  * SHALL be either the player's slot name or in-game name
-  * MAY be used to display a generic death text, ex. f"{source} has died."
+* data:
+  * `time`: int Unix timestamp of packet sent
+    * SHALL be included
+    * SHALL be used in the client to ignore a client's own packets reflected back
+    * MAY ignore any packets older than the previous send or only packets that equal timestamp exactly
+  * `cause`: string flavor text about the deaths to display to player
+    * SHALL be a string
+    * MAY be omitted
+    * SHALL include the player's slot name or in-game name as part of the message so it can be displayed as-is
+    * MAY be used if present to display to the player
+  * `source`: string name of the player who died
+    * SHALL be included
+    * SHALL be a string
+    * SHALL be either the player's slot name or in-game name
+    * MAY be used to display a generic death text, ex. f"{source} has died."
 
 #### Grouped DeathLink
 
@@ -60,23 +60,23 @@ Grouped DeathLinks look and act like normal DeathLink packets, but have followin
 
 ### DamageLink
 
-#### type: Bounce
-#### tag: `SharedDamage`
+* type: Bounce
+* tag: `SharedDamage`
 
-#### data:
-* `time`: int Unix timestamp of packet sent
-  * SHALL be included
-  * SHALL be used in the client to ignore a client's own packets reflected back
-    * TODO: lx5's notes say useful if you want to ignore by time
-  * MAY ignore any packets older than the previous send or only packets that equal timestamp exactly
-* `uuid`: string UUID identifier for the client sending the packet
-  * ??? be included
-  * MAY be used in the client to ignore a client's own packets while allowing packets from other clients on the same slot
-* `damage_points`: int declaring the severity of the damage
-  * SHALL be included
-  * Clients SHALL define a ratio of damage_points per in game health, even if that is 1:1
-    * Clients MAY use 80-160 damage_points per full health bar as a benchmark for deciding the ratio
-  * Clients MAY define a limit for incoming damage
+* data:
+  * `time`: int Unix timestamp of packet sent
+    * SHALL be included
+    * SHALL be used in the client to ignore a client's own packets reflected back
+      * TODO: lx5's notes say useful if you want to ignore by time
+    * MAY ignore any packets older than the previous send or only packets that equal timestamp exactly
+  * `uuid`: string UUID identifier for the client sending the packet
+    * ??? be included
+    * MAY be used in the client to ignore a client's own packets while allowing packets from other clients on the same slot
+  * `damage_points`: int declaring the severity of the damage
+    * SHALL be included
+    * Clients SHALL define a ratio of damage_points per in game health, even if that is 1:1
+      * Clients MAY use 80-160 damage_points per full health bar as a benchmark for deciding the ratio
+    * Clients MAY define a limit for incoming damage
 
 ### Grouped DamageLink
 
@@ -92,79 +92,79 @@ Grouped DamageLinks look and act like normal DamageLink packets, but have follow
 
 ### KnockbackLink
 
-#### type: Bounce
-#### tag: `KnockbackLink`
+* type: Bounce
+* tag: `KnockbackLink`
 
-#### data:
-* `source`: string name of the player who died
-  * SHALL be included
-  * SHALL be a string
-  * SHALL either be the player's slot name or in-game name
-  * MAY be used to display a generic death text
-* `uuid`: string UUID identifier for the client sending the packet
-  * ??? be included
-  * MAY be used in the client to ignore a client's own packets while allowing packets from other clients on the same slot
-* `cause`: string flavor text about the knockback to display to the player
-  * SHALL be included
-  * MAY be used to display to the player
-* `time`: int Unix timestamp of packet sent
-  * SHALL be included
-  * SHALL be used in the client to ignore a client's own packets reflected back
-  * MAY ignore any packets older than the previous send or only packets that equal timestamp exactly
-* `value`: object with the following definition
-  * `x`: float value of knockback; + is east/left, - is west/right
-  * `y`: float value of knockback; + is up, - is down
-  * `z`: float value of knockback; + is south, - is north
-  * All value attributes SHALL be included
-  * All values not used when sending SHALL be set to 0
-  * All values not used when receiving SHALL be ignored
-  * All values SHALL be calculated as the change in velocity of the player
-  * Clients MAY include some scaling multiplier to normalize knockbacks
-    * Clients MAY use 40 on the wire as a baseline for generic knockbacks and 100 as a baseline for large knockbacks like a bomb
-  * Clients MAY cap incoming knockback velocity
-  * Clients MAY batch outgoing knockbacks
+* data:
+  * `source`: string name of the player who died
+    * SHALL be included
+    * SHALL be a string
+    * SHALL either be the player's slot name or in-game name
+    * MAY be used to display a generic death text
+  * `uuid`: string UUID identifier for the client sending the packet
+    * ??? be included
+    * MAY be used in the client to ignore a client's own packets while allowing packets from other clients on the same slot
+  * `cause`: string flavor text about the knockback to display to the player
+    * SHALL be included
+    * MAY be used to display to the player
+  * `time`: int Unix timestamp of packet sent
+    * SHALL be included
+    * SHALL be used in the client to ignore a client's own packets reflected back
+    * MAY ignore any packets older than the previous send or only packets that equal timestamp exactly
+  * `value`: object with the following definition
+    * `x`: float value of knockback; + is east/left, - is west/right
+    * `y`: float value of knockback; + is up, - is down
+    * `z`: float value of knockback; + is south, - is north
+    * All value attributes SHALL be included
+    * All values not used when sending SHALL be set to 0
+    * All values not used when receiving SHALL be ignored
+    * All values SHALL be calculated as the change in velocity of the player
+    * Clients MAY include some scaling multiplier to normalize knockbacks
+      * Clients MAY use 40 on the wire as a baseline for generic knockbacks and 100 as a baseline for large knockbacks like a bomb
+    * Clients MAY cap incoming knockback velocity
+    * Clients MAY batch outgoing knockbacks
 
 
 ### Ring Link
 
-#### type: Bounce
-#### tag: `RingLink`
+* type: Bounce
+* tag: `RingLink`
 
-#### data:
-* `time`: int Unix timestamp of packet sent
-  * SHALL be included
-* `source`: int unique-per-connection identifier
-  * SHALL be included
-  * SHALL be unique per connection
-  * SHALL be used to ignore a client's own packets while allowing packets from other clients on the same slot
-  * MAY use the shared UUID
-* `amount`: int value of rings gained or lost
-  * SHALL be included
-  * Clients SHOULD increase the appropriate attribute on positive amounts and decrease on negative amounts but if they do not honor
-    increase or decrease they SHALL ignore the packet entirely
-  * Clients MAY have a multiplier to normalize changes
-  * Clients MAY ignore amount changes if the player is not in a state to receive them (main menu, death, etc.)
+* data:
+  * `time`: int Unix timestamp of packet sent
+    * SHALL be included
+  * `source`: int unique-per-connection identifier
+    * SHALL be included
+    * SHALL be unique per connection
+    * SHALL be used to ignore a client's own packets while allowing packets from other clients on the same slot
+    * MAY use the shared UUID
+  * `amount`: int value of rings gained or lost
+    * SHALL be included
+    * Clients SHOULD increase the appropriate attribute on positive amounts and decrease on negative amounts but if they do not honor
+      increase or decrease they SHALL ignore the packet entirely
+    * Clients MAY have a multiplier to normalize changes
+    * Clients MAY ignore amount changes if the player is not in a state to receive them (main menu, death, etc.)
 
 
 ### Trap Link
 
-#### type: Bounce
-#### tag: `TrapLink`
+* type: Bounce
+* tag: `TrapLink`
 
-#### data:
-* `time`: int Unix timestamp of packet sent
-  * SHALL be included
-* `source`: string slot name of sending player
-  * SHALL be included
-  * SHALL be used to ignore same-slot packets to not duplicate sent items
-    * TODO: MAY when local item handling? unsure
-    * TODO: do other client's need to filter out same source?
-* `trap_name`: string name of trap
-  * SHALL be included
-  * MAY be converted to another known trap name when receiving if thematically correct
-    * Known trap names and how other games convert are documented in a
-      [spreadsheet](https://docs.google.com/spreadsheets/d/1yoNilAzT5pSU9c2hYK7f2wHAe9GiWDiHFZz8eMe1oeQ/edit?gid=811965759#gid=811965759)
-  * Linked Traps MAY be queued
+* data:
+  * `time`: int Unix timestamp of packet sent
+    * SHALL be included
+  * `source`: string slot name of sending player
+    * SHALL be included
+    * SHALL be used to ignore same-slot packets to not duplicate sent items
+      * TODO: MAY when local item handling? unsure
+      * TODO: do other client's need to filter out same source?
+  * `trap_name`: string name of trap
+    * SHALL be included
+    * MAY be converted to another known trap name when receiving if thematically correct
+      * Known trap names and how other games convert are documented in a
+        [spreadsheet](https://docs.google.com/spreadsheets/d/1yoNilAzT5pSU9c2hYK7f2wHAe9GiWDiHFZz8eMe1oeQ/edit?gid=811965759#gid=811965759)
+    * Linked Traps MAY be queued
 
 # DataStorage
 
@@ -180,10 +180,10 @@ When written in this doc they will use python f-string format, example: the key 
 
 ### EnergyLink
 
-#### type: DataStorage
-#### key: f"EnergyLink{team}"
+* type: DataStorage
+* key: f"EnergyLink{team}"
 
-value: int
+* value: int
   * The key SHALL be increased by the `add` operation
   * The default of `0` SHALL be included
   * The key SHALL be decreased by combining the `add` operation with a negative values and a `max` operation of `0`
