@@ -4,7 +4,8 @@ I've created/maintain a couple randomizer integrations to the Archipelago framew
 * [Minit](https://github.com/qwint/APMinit) - A wonderful little time-based puzzle game
 * [Air Deliver](https://github.com/qwint/ap-air-delivery) - An adorable Pico-8 platformer (which you can play [here](https://qwint.github.io/air_delivery/)
 * [Pseudoregalia](https://github.com/pseudoregalia-modding/pseudoregalia-archipelago) - A chunky low-poly platformer (integration originally written by littlemeowmeow0134, and co-maintained with highrow623)
-* And maintaining the [Hollow Knight](https://archipelago.gg/games/Hollow%20Knight/info/en) implementation
+* [Hollow Knight](https://archipelago.gg/games/Hollow%20Knight/info/en) implementation
+* [Protocol Definitions](/protocol_specs.md)
 
 Bonus little things:
 * A collection of basic recipies [here](/recipes)
