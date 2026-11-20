@@ -18,9 +18,9 @@ ex.
   "cmd": "Bounce",
   "tags": ["DeathLink"],
   "data": {
-    "time": 123,  // unix tiemstamp
-    "cause": "The player Player1 died.",  // flavor text; omit key if missing
-    "source": "Player1"  // slot name; mandatory
+    "time": 123,
+    "cause": "The player Player1 died.",
+    "source": "Player1"
   }
 }]
 ```
@@ -52,7 +52,7 @@ Grouped DeathLinks look and act like normal DeathLink packets, but have followin
 * The user SHALL be allowed to define an arbitrary group name, either in client or in options
 * The group name SHALL be case sensitive
 * The group name SHALL be appended to the DeathLink tag when connecting and when sending deathlinks
-***TODO: confirm this***
+* TODO: confirm the following
 * A client SHALL NOT connect as both base DeathLink and a group
 * A client MAY connect as multiple groups
   * If a client is in multiple groups it SHALL include all in the tags of one DeathLink packet and not send multiple
@@ -66,7 +66,8 @@ tag: `SharedDamage`
 data:
 * `time`: int Unix timestamp of packet sent
   * SHALL be included
-  * SHALL be used in the client to ignore a client's own packets reflected back  // TODO: lx5's notes say useful if you want to ignore by time
+  * SHALL be used in the client to ignore a client's own packets reflected back
+    * TODO: lx5's notes say useful if you want to ignore by time
   * MAY ignore any packets older than the previous send or only packets that equal timestamp exactly
 * `uuid`: string UUID identifier for the client sending the packet
   * ??? be included
@@ -83,7 +84,7 @@ Grouped DamageLinks look and act like normal DamageLink packets, but have follow
 * The user SHALL be allowed to define an arbitrary group name, either in client or in options
 * The group name SHALL be case sensitive
 * The group name SHALL be appended to the SharedDamage tag when connecting and when sending DamageLinks
-***TODO: confirm this***
+* TODO: confirm this
 * A client SHALL NOT connect as both base DamageLink and a group
 * A client MAY connect as multiple groups
   * If a client is in multiple groups it SHALL include all in the tags of one DamageLink packet and not send multiple
