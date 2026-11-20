@@ -27,10 +27,10 @@ ex.
 
 ### DeathLink
 
-type: Bounce
-tag: `DeathLink`
+#### type: Bounce
+#### tag: `DeathLink`
 
-data:
+#### data:
 * `time`: int Unix timestamp of packet sent
   * SHALL be included
   * SHALL be used in the client to ignore a client's own packets reflected back
@@ -60,10 +60,10 @@ Grouped DeathLinks look and act like normal DeathLink packets, but have followin
 
 ### DamageLink
 
-type: Bounce
-tag: `SharedDamage`
+#### type: Bounce
+#### tag: `SharedDamage`
 
-data:
+#### data:
 * `time`: int Unix timestamp of packet sent
   * SHALL be included
   * SHALL be used in the client to ignore a client's own packets reflected back
@@ -92,10 +92,10 @@ Grouped DamageLinks look and act like normal DamageLink packets, but have follow
 
 ### KnockbackLink
 
-type: Bounce
-tag: `KnockbackLink`
+#### type: Bounce
+#### tag: `KnockbackLink`
 
-data:
+#### data:
 * `source`: string name of the player who died
   * SHALL be included
   * SHALL be a string
@@ -127,10 +127,10 @@ data:
 
 ### Ring Link
 
-type: Bounce
-tag: `RingLink`
+#### type: Bounce
+#### tag: `RingLink`
 
-data:
+#### data:
 * `time`: int Unix timestamp of packet sent
   * SHALL be included
 * `source`: int unique-per-connection identifier
@@ -148,10 +148,10 @@ data:
 
 ### Trap Link
 
-type: Bounce
-tag: `TrapLink`
+#### type: Bounce
+#### tag: `TrapLink`
 
-data:
+#### data:
 * `time`: int Unix timestamp of packet sent
   * SHALL be included
 * `source`: string slot name of sending player
@@ -180,8 +180,8 @@ When written in this doc they will use python f-string format, example: the key 
 
 ### EnergyLink
 
-type: DataStorage
-key: f"EnergyLink{team}"
+#### type: DataStorage
+#### key: f"EnergyLink{team}"
 
 value: int
   * The key SHALL be increased by the `add` operation
