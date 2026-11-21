@@ -66,11 +66,10 @@ Grouped DeathLinks look and act like normal DeathLink packets, but have followin
 * data:
   * `time`: int Unix timestamp of packet sent
     * SHALL be included
-    * SHALL be used in the client to ignore a client's own packets reflected back
-      * TODO: lx5's notes say useful if you want to ignore by time
+    * SHALL be used in the client to ignore a client's own packets reflected back if not ignoring packets by uuid
     * MAY ignore any packets older than the previous send or only packets that equal timestamp exactly
   * `uuid`: string UUID identifier for the client sending the packet
-    * ??? be included
+    * MAY be included
     * MAY be used in the client to ignore a client's own packets while allowing packets from other clients on the same slot
   * `damage_points`: int declaring the severity of the damage
     * SHALL be included
@@ -102,7 +101,7 @@ Grouped DamageLinks look and act like normal DamageLink packets, but have follow
     * SHALL either be the player's slot name or in-game name
     * MAY be used to display a generic death text
   * `uuid`: string UUID identifier for the client sending the packet
-    * ??? be included
+    * MAY be included
     * MAY be used in the client to ignore a client's own packets while allowing packets from other clients on the same slot
   * `cause`: string flavor text about the knockback to display to the player
     * SHALL be included
