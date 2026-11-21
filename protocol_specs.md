@@ -25,7 +25,7 @@ ex.
 }]
 ```
 
-### DeathLink
+## DeathLink
 
 * type: Bounce
 * tag: `DeathLink`
@@ -58,7 +58,7 @@ Grouped DeathLinks look and act like normal DeathLink packets, but have followin
   * If a client is in multiple groups it SHALL include all in the tags of one DeathLink packet and not send multiple
 
 
-### DamageLink
+## DamageLink
 
 * type: Bounce
 * tag: `SharedDamage`
@@ -78,7 +78,7 @@ Grouped DeathLinks look and act like normal DeathLink packets, but have followin
       * Clients MAY use 80-160 damage_points per full health bar as a benchmark for deciding the ratio
     * Clients MAY define a limit for incoming damage
 
-### Grouped DamageLink
+## Grouped DamageLink
 
 Grouped DamageLinks look and act like normal DamageLink packets, but have following differences
 * The user SHALL be allowed to define an arbitrary group name, either in client or in options
@@ -90,7 +90,7 @@ Grouped DamageLinks look and act like normal DamageLink packets, but have follow
   * If a client is in multiple groups it SHALL include all in the tags of one DamageLink packet and not send multiple
 
 
-### KnockbackLink
+## KnockbackLink
 
 * type: Bounce
 * tag: `KnockbackLink`
@@ -125,7 +125,7 @@ Grouped DamageLinks look and act like normal DamageLink packets, but have follow
     * Clients MAY batch outgoing knockbacks
 
 
-### Ring Link
+## Ring Link
 
 * type: Bounce
 * tag: `RingLink`
@@ -146,7 +146,7 @@ Grouped DamageLinks look and act like normal DamageLink packets, but have follow
     * Clients MAY ignore amount changes if the player is not in a state to receive them (main menu, death, etc.)
 
 
-### Trap Link
+## Trap Link
 
 * type: Bounce
 * tag: `TrapLink`
@@ -178,7 +178,7 @@ When written in this doc they will use python f-string format, example: the key 
 * ...
 
 
-### EnergyLink
+## EnergyLink
 
 * type: DataStorage
 * key: f"EnergyLink{team}"
@@ -190,7 +190,7 @@ When written in this doc they will use python f-string format, example: the key 
   * The client SHALL react to the `SetReply` message and only apply the effect in game based on the difference between `original_value` and `value`
 
 
-### Gifting
+## Gifting
 
 // TODO: flesh this out
 https://github.com/agilbert1412/Archipelago.Gifting.Net/blob/main/Documentation/Gifting%20API.md
