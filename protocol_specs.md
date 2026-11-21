@@ -156,8 +156,8 @@ Grouped DamageLinks look and act like normal DamageLink packets, but have follow
   * `source`: string slot name of sending player
     * SHALL be included
     * SHALL be used to ignore same-slot packets to not duplicate sent items
-      * TODO: MAY when local item handling? unsure
-      * TODO: do other client's need to filter out same source?
+      * Client MAY attempt to de-duplicate packets triggered from the same item when sending or receiving but is not required
+      * Client MAY attempt to not ignore same-slot packets when triggered off of local item handling
   * `trap_name`: string name of trap
     * SHALL be included
     * MAY be converted to another known trap name when receiving if thematically correct
@@ -193,3 +193,9 @@ When written in this doc they will use python f-string format, example: the key 
 
 // TODO: flesh this out
 https://github.com/agilbert1412/Archipelago.Gifting.Net/blob/main/Documentation/Gifting%20API.md
+
+
+## Wonder Trade
+
+// TODO: flesh this out
+https://github.com/ArchipelagoMW/Archipelago/blob/main/worlds/pokemon_emerald/docs/wonder%20trades.md
